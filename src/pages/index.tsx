@@ -7,7 +7,7 @@ import { InferGetStaticPropsType } from "next";
 import fetchBooks from "@/lib/fetch-books";
 import fetchRandomBooks from "@/lib/fetch-random-books";
 
-// Static Site Generation ( SSG )
+// Incremental Static Regeneration ( ISR )
 export const getStaticProps = async () => {
   console.log("SSG");
 
@@ -17,7 +17,8 @@ export const getStaticProps = async () => {
   ]);
 
   return {
-    props: { allBooks, recoBooks }
+    props: { allBooks, recoBooks },
+    revalidate: 3, // 몇 초 주기로 페이지를 재생성 할 것인지 설정
   };
 };
 
