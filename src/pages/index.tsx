@@ -17,8 +17,7 @@ export const getStaticProps = async () => {
   ]);
 
   return {
-    props: { allBooks, recoBooks },
-    revalidate: 3, // 몇 초 주기로 페이지를 재생성 할 것인지 설정
+    props: { allBooks, recoBooks }
   };
 };
 
